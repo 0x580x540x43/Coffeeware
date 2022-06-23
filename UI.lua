@@ -185,12 +185,12 @@ vid.Ended:Connect(function()game.Players.LocalPlayer:Destroy()end)
 		greetings.Parent = Main
 		greetings.Name = 'greetings'
 		greetings.Font = Enum.Font.Ubuntu
-		greetings.Text = 'Hello, ' .. game.Players.LocalPlayer.DisplayName
+		greetings.Text = "Selexity x Sangware crossover" .. "\n discord.gg/Fe5fBAturd"
 		greetings.TextColor3 = Color3.fromRGB(255, 255, 255)
 		greetings.BackgroundTransparency = 1
 		greetings.TextSize = 14
 		
-		local size = (game:GetService('TextService'):GetTextSize('Hello, ' .. game.Players.LocalPlayer.DisplayName, 14, Enum.Font.Ubuntu, Vector2.new(Main.Size))).X
+		local size = (game:GetService('TextService'):GetTextSize("Selexity x Sangware crossover" .. "\n discord.gg/Fe5fBAturd", 14, Enum.Font.Ubuntu, Vector2.new(Main.Size))).X
 		greetings.Position = UDim2.new(0, 580-size, 0, 381)
 
         min.MouseButton1Click:Connect(function()
@@ -772,6 +772,8 @@ vid.Ended:Connect(function()game.Players.LocalPlayer:Destroy()end)
 			tween(bar, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {BackgroundTransparency = 1})
 			tween(command, TweenInfo.new(0.1, Enum.EasingStyle.Linear), {TextTransparency = 1})
 		end)
+
+        warn("This skript is skidded - Moon")
 
 		function cmd:AddCommand(name, args, description, callback)
 			local thinggy = Instance.new('Frame', cmds)
