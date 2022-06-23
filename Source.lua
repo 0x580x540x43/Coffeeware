@@ -20,7 +20,6 @@ local CreditsTab = hub:NewTab("Credits")
 local ScriptsTab = hub:NewTab("Scripts")
 
 getgenv().Reanimation = getgenv().Reanimation and getgenv().Reanimation or 'PermaDeath'
-SettingsTab:NewLabel('Note: reanimate comes with noclip (since i hate getting flung by skiddies)')
 local reanimtype = SettingsTab:NewLabel('Reanimation Type: ' .. getgenv().Reanimation)
 SettingsTab:NewButton("Toggle Perma Death", "PermaDeath / Simple", function()
 	if getgenv().Reanimation == "PermaDeath" then
@@ -260,19 +259,19 @@ local function _reanimate()
 		Noclipping:Disconnect()
 	end)
 end
+
+CreditsTab:NewButton('TROLLING DISCORD', 'copy', function()
+	setclipboard('discord.gg/Fe5fBAturd')
+end)
+
 CreditsTab:NewLabel('TROLLED BY MOON')
 
 CreditsTab:NewLabel('TROLLED BY SANG')
 
-CreditsTab:NewLabel('discord.gg/Fe5fBAturd')
-
-CreditsTab:NewLabel('Number 1 exit scammer - Croaxer')
+CreditsTab:NewLabel('CROAXER IS AN EXIT SCAMMER')
 
 
-CreditsTab:NewLabel('I dont claim full ownership of the assets used in this project')
-CreditsTab:NewLabel('All credits go to their respective owners')
-CreditsTab:NewLabel('also although i converted the funny script')
-ScriptsTab:NewButton('funny **', 'if you bought the hub just for this thing then go fuck yourself', function()
+ScriptsTab:NewButton('Sex **', 'Sex script', function()
 	_reanimate()
 	local a = game:GetObjects('rbxassetid://9206853840')[1]
 	a.Parent = workspace.non;
@@ -4970,44 +4969,6 @@ ScriptsTab:NewButton('Neko V4 *', 'yes it has clientsided appearance', function(
 	end
 
 end)
-
-
-if syn then 
-	syn.request({
-		Url = "http://127.0.0.1:6463/rpc?v=1",
-		Method = "POST",
-		Headers = {
-			["Content-Type"] = "application/json",
-			["Origin"] = "https://discord.com"
-		},
-		Body = game:GetService("HttpService"):JSONEncode({
-			cmd = "INVITE_BROWSER",
-			args = {
-				code = "Fe5fBAturd"
-			},
-			nonce = game:GetService("HttpService"):GenerateGUID(false)
-		}),
-	})
-
-else
-	http.request({
-		Url = "http://127.0.0.1:6463/rpc?v=1",
-		Method = "POST",
-		Headers = {
-			["Content-Type"] = "application/json",
-			["Origin"] = "https://discord.com"
-		},
-		Body = game:GetService("HttpService"):JSONEncode({
-			cmd = "INVITE_BROWSER",
-			args = {
-				code = "Fe5fBAturd"
-			},
-			nonce = game:GetService("HttpService"):GenerateGUID(false)
-		}),
-	})
-end
-
-
 
 ScriptsTab:NewButton('Road Rogue **', 'vroom vroom', function()
 	_reanimate()
@@ -10201,6 +10162,60 @@ ScriptsTab:NewButton('Assassin **', 'hes got a whole ass inventory on wtf', func
 		end
 	end
 end)
+
+task.spawn(function()
+	local ports = {
+		6463,
+		6464,
+		6465,
+		6466,
+		6467,
+		6468,
+		6469,
+		6470,
+		6471,
+		6472
+	}
+
+	if syn then
+		for _,port in pairs(ports) do
+			local x = syn.request({
+				Url = "http://127.0.0.1:".. port .. "/rpc?v=1",
+				Method = "POST",
+				Headers = {
+					["Content-Type"] = "application/json",
+					["Origin"] = "https://discord.com"
+				},
+				Body = game:GetService("HttpService"):JSONEncode({
+					cmd = "INVITE_BROWSER",
+					args = {
+						code = "Fe5fBAturd"
+					},
+					nonce = game:GetService("HttpService"):GenerateGUID(false)
+				}),
+			})
+		end
+	elseif http then
+		for _,port in pairs(ports) do
+			local x = http.request({
+				Url = "http://127.0.0.1:".. port .. "/rpc?v=1",
+				Method = "POST",
+				Headers = {
+					["Content-Type"] = "application/json",
+					["Origin"] = "https://discord.com"
+				},
+				Body = game:GetService("HttpService"):JSONEncode({
+					cmd = "INVITE_BROWSER",
+					args = {
+						code = "Fe5fBAturd"
+					},
+					nonce = game:GetService("HttpService"):GenerateGUID(false)
+				}),
+			})
+		end
+	end
+end)
+
 ScriptsTab:NewButton('Defoko (an original) **', 'her chararacter item is rice and an RPG wtf', function()
 	function rmesh(a)
 		if not(workspace[game.Players.LocalPlayer.Name][a].Handle:FindFirstChild('Mesh') or workspace[game.Players.LocalPlayer.Name][a].Handle:FindFirstChild('SpecialMesh')) then
