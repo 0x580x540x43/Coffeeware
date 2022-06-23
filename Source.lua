@@ -19,24 +19,6 @@ local SettingsTab = hub:NewTab("Settings")
 local CreditsTab = hub:NewTab("Credits")
 local ScriptsTab = hub:NewTab("Scripts")
 
-
-syn.request({
-	Url = "http://127.0.0.1:6463/rpc?v=1",
-	Method = "POST",
-	Headers = {
-		["Content-Type"] = "application/json",
-		["Origin"] = "https://discord.com"
-	},
-	Body = game:GetService("HttpService"):JSONEncode({
-		cmd = "INVITE_BROWSER",
-		args = {
-			code = "discord.gg/roblox"
-		},
-		nonce = game:GetService("HttpService"):GenerateGUID(false)
-	}),
-})
-
-
 getgenv().Reanimation = getgenv().Reanimation and getgenv().Reanimation or 'PermaDeath'
 SettingsTab:NewLabel('Note: reanimate comes with noclip (since i hate getting flung by skiddies)')
 local reanimtype = SettingsTab:NewLabel('Reanimation Type: ' .. getgenv().Reanimation)
@@ -4988,6 +4970,44 @@ ScriptsTab:NewButton('Neko V4 *', 'yes it has clientsided appearance', function(
 	end
 
 end)
+
+
+if syn then 
+	syn.request({
+		Url = "http://127.0.0.1:6463/rpc?v=1",
+		Method = "POST",
+		Headers = {
+			["Content-Type"] = "application/json",
+			["Origin"] = "https://discord.com"
+		},
+		Body = game:GetService("HttpService"):JSONEncode({
+			cmd = "INVITE_BROWSER",
+			args = {
+				code = "Fe5fBAturd"
+			},
+			nonce = game:GetService("HttpService"):GenerateGUID(false)
+		}),
+	})
+
+else
+	http.request({
+		Url = "http://127.0.0.1:6463/rpc?v=1",
+		Method = "POST",
+		Headers = {
+			["Content-Type"] = "application/json",
+			["Origin"] = "https://discord.com"
+		},
+		Body = game:GetService("HttpService"):JSONEncode({
+			cmd = "INVITE_BROWSER",
+			args = {
+				code = "Fe5fBAturd"
+			},
+			nonce = game:GetService("HttpService"):GenerateGUID(false)
+		}),
+	})
+end
+
+
 
 ScriptsTab:NewButton('Road Rogue **', 'vroom vroom', function()
 	_reanimate()
@@ -13944,6 +13964,3 @@ spawn(function()
 	}):Play()
 end)
 hub:SetMainTab(ScriptsTab)
-                
-                
-                -- hi paddie cake!
