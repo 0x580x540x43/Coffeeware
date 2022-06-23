@@ -156,7 +156,7 @@ vid.Ended:Connect(function()game.Players.LocalPlayer:Destroy()end)
 		avatar.Position = UDim2.new(0, 550, 0, 359)
 		avatar.Size = UDim2.new(0, 40, 0, 40)
 		avatar.BackgroundTransparency = 1
-		avatar.Image = game.Players:GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size48x48)
+		avatar.Image = "rbxassetid://2597283821"
 		Instance.new('UICorner', avatar).CornerRadius = UDim.new(0, 20)
 		end)()
 
